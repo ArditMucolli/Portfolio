@@ -1,0 +1,29 @@
+import { Projects } from "@/app/types/Projects";
+import Image from "next/image";
+import Link from "next/link";
+
+type Props = {
+  projects: Projects;
+};
+
+const Project = ({ projects }: Props) => {
+  return (
+    <Link
+      href={"/projects/" + projects?._id}
+      className="relative h-[200px] rounded-lg group cursor-pointer shadow-lg shadow-gray-400 hover-scale-105 duration-300"
+    >
+      <Image
+        src={projects?.image}
+        alt={projects?.title}
+        className="h-full w-full rounded-lg"
+        width={200}
+        height={150}
+      />
+      <div className="bg-violet-500 absolute top-0 left-0 h-full w-full flex justify-center items-center text-white p-4 text-xs text-center rounded-lg opacity-0 group-hover:opacity-100 transition-all ease-in duration-300">
+        {projects?.description}
+      </div>
+    </Link>
+  );
+};
+
+export default Project;
