@@ -15,7 +15,6 @@ export default defineType({
       title: "Description",
       type: "string",
     }),
-
     defineField({
       name: "image",
       title: "Image",
@@ -24,10 +23,14 @@ export default defineType({
         hotspot: true,
       },
     }),
-
     defineField({
-      name: "url",
-      title: "URL",
+      name: "code",
+      title: "Code Link",
+      type: "string",
+    }),
+    defineField({
+      name: "demo",
+      title: "Demo Link",
       type: "string",
     }),
     defineField({

@@ -27,7 +27,10 @@ const ProjectPage = async ({ params }: Props) => {
             </p>
           </div>
           <button className="text-[#F1F6F9] md:font-bold bg-violet-500 px-2 md:px-4 py-2 rounded-lg hover:bg-violet-300 text-sm">
-            <Link href={projectData.url}>Link</Link>
+            <Link href={projectData.demo}>Demo</Link>
+          </button>
+          <button className="text-[#F1F6F9] md:font-bold bg-violet-500 px-2 md:px-4 py-2 rounded-lg hover:bg-violet-300 text-sm">
+            <Link href={projectData.code}>Code</Link>
           </button>
         </div>
         <Image

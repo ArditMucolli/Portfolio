@@ -7,6 +7,7 @@ export type Projects = {
   description: string;
   image: string;
   _createdAt: string;
-  url: string;
+  code: string;
+  demo: string;
   tech: Skills[];
 };
