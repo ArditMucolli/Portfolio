@@ -1,5 +1,5 @@
 import { PortableTextBlock } from "sanity";
-import { Socials } from "./Social";
+import { Socials } from "./SocialType";
 
 export type Profile = {
   _id: string;
@@ -7,7 +7,5 @@ export type Profile = {
   smallBio: string;
   profession: string[];
   image: string;
-  secondImage: string;
-  bio: PortableTextBlock;
   socials: Socials[];
 };

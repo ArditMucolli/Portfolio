@@ -2,11 +2,9 @@ import Footer from "@/components/footer/Footer";
 import Navbar from "@/components/navbar/Navbar";
 import Project from "@/components/projects/Project";
 import { getProjects, getSocials } from "@/utils/sanity-utis";
-import { Projects } from "../types/Projects";
+import { Projects } from "../types/ProjectsType";
 
-type Props = {};
-
-const ProjectsPage = async (props: Props) => {
+const ProjectsPage = async () => {
   const socialData = await getSocials();
   const projectData: Projects[] = await getProjects();
   return (

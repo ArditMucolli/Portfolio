@@ -4,12 +4,10 @@ import CursorComponent from "./CursorComponent";
 import { SocialIcon } from "react-social-icons";
 import Motion from "../motion/Motion";
 import { getProfile } from "@/utils/sanity-utis";
-import { Profile } from "@/app/types/Profile";
-import { Socials } from "@/app/types/Social";
+import { Profile } from "@/app/types/ProfileType";
+import { Socials } from "@/app/types/SocialType";
 
-type Props = {};
-
-const Main = async (props: Props) => {
+const Main = async () => {
   const profileData: Profile = await getProfile();
   return (
     <section className="h-[calc(100vh-56px)] w-full flex justify-center items-center">

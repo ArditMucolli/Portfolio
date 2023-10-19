@@ -8,17 +8,17 @@ import { getSocials } from "@/utils/sanity-utis";
 import Experience from "@/components/experience/Experience";
 
 export default async function Home() {
-  const socialData = await getSocials();
+  const socialsData = await getSocials();
 
   return (
     <div className="h-screen w-full overflow-x-hidden bg-[#F1F6F9]">
-      <Navbar socialsData={socialData} />
+      <Navbar socialsData={socialsData} />
       <Main />
       <Experience />
       <Skills />
       <Projects />
       <Contact />
-      <Footer social={socialData} />
+      <Footer social={socialsData} />
     </div>
   );
 }

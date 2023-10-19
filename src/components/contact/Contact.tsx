@@ -1,15 +1,13 @@
 "use client";
 import { useForm, SubmitHandler } from "react-hook-form";
 
-type Props = {};
-
 type Inputs = {
   name: string;
   subject: string;
   message: string;
 };
 
-const Contact = (props: Props) => {
+const Contact = () => {
   const {
     register,
     handleSubmit,

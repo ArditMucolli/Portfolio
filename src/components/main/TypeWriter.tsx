@@ -1,11 +1,11 @@
 "use client";
 import { useTypewriter } from "react-simple-typewriter";
 
-type Props = {
+type P = {
   professions: string[];
 };
 
-const TypeWriter = ({ professions }: Props) => {
+const TypeWriter = ({ professions }: P) => {
   const [text] = useTypewriter({
     words: professions,
     loop: true,

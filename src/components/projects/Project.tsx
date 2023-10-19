@@ -1,12 +1,12 @@
-import { Projects } from "@/app/types/Projects";
+import { Projects } from "@/app/types/ProjectsType";
 import Image from "next/image";
 import Link from "next/link";
 
-type Props = {
+type P = {
   projects: Projects;
 };
 
-const Project = ({ projects }: Props) => {
+const Project = ({ projects }: P) => {
   return (
     <Link
       href={"/projects/" + projects?._id}

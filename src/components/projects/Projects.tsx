@@ -1,11 +1,9 @@
 import Link from "next/link";
 import Project from "./Project";
-import { Projects } from "@/app/types/Projects";
+import { Projects } from "@/app/types/ProjectsType";
 import { getProjects } from "@/utils/sanity-utis";
 
-type Props = {};
-
-const Projects = async (props: Props) => {
+const Projects = async () => {
   const projectData: Projects[] = await getProjects();
   return (
     <section className="h-max mt-10 md:h-screen max-w-7xl mx-auto flex flex-col justify-center items-center space-y-24">

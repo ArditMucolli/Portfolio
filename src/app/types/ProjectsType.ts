@@ -1,4 +1,4 @@
-import { Skills } from "./Skills";
+import { Skills } from "./SkillType";
 
 export type Projects = {
   slice(arg0: number, arg1: number): unknown;

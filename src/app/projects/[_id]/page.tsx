@@ -3,14 +3,14 @@ import Navbar from "@/components/navbar/Navbar";
 import Link from "next/link";
 import Image from "next/image";
 import { getProject, getSocials } from "@/utils/sanity-utis";
-import { Projects } from "@/app/types/Projects";
-import { Skills } from "@/app/types/Skills";
+import { Projects } from "@/app/types/ProjectsType";
+import { Skills } from "@/app/types/SkillType";
 
-type Props = {
+type P = {
   params: { _id: string };
 };
 
-const ProjectPage = async ({ params }: Props) => {
+const ProjectPage = async ({ params }: P) => {
   const _id = params._id;
   const socialData = await getSocials();
   const projectData: Projects = await getProject(_id);

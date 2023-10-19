@@ -1,10 +1,8 @@
 import { getSkills } from "@/utils/sanity-utis";
 import SkillCircle from "./SkillCircle";
-import { Skills } from "@/app/types/Skills";
+import { Skills } from "@/app/types/SkillType";
 
-type Props = {};
-
-const Skills = async (props: Props) => {
+const Skills = async () => {
   const skillsData: Skills[] = await getSkills();
 
   return (

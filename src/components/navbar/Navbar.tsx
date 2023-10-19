@@ -3,13 +3,13 @@ import Link from "next/link";
 import { SocialIcon } from "react-social-icons";
 import { usePathname } from "next/navigation";
 import Motion from "../motion/Motion";
-import { Socials } from "@/app/types/Social";
+import { Socials } from "@/app/types/SocialType";
 
-type Props = {
+type P = {
   socialsData: Socials[];
 };
 
-const Navbar = ({ socialsData }: Props) => {
+const Navbar = ({ socialsData }: P) => {
   const pathname = usePathname();
   return (
     <nav className="sticky top-0 bg-white first-letter:max-w-7xl mx-auto p-5 flex items-center justify-between z-20">
@@ -21,6 +21,7 @@ const Navbar = ({ socialsData }: Props) => {
               style={{ height: 25, width: 25 }}
               bgColor="#793FEF"
               className="hover:scale-125 duration-200"
+              target="_blank"
               url={social.url}
             />
           ))}

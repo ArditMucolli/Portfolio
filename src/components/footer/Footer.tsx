@@ -1,17 +1,16 @@
-import { Socials } from "@/app/types/Social";
+import { Socials } from "@/app/types/SocialType";
 import { SocialIcon } from "react-social-icons";
 
-type Props = {
+type P = {
   social: Socials[];
 };
 
-const Footer = ({ social }: Props) => {
+const Footer = ({ social }: P) => {
   function getCurrentYear() {
     const currentDate = new Date();
     return currentDate.getFullYear();
   }
 
-  // Get the current year
   const currentYear = getCurrentYear();
   return (
     <footer className="bg-violet-900 w-full py-5">

@@ -1,6 +1,5 @@
 import { ExperienceType } from "@/app/types/ExperienceType";
 import { getExperiences } from "@/utils/sanity-utis";
-import React, { useEffect, useState } from "react";
 
 const Experience = async () => {
   const experienceData: ExperienceType[] = await getExperiences();
