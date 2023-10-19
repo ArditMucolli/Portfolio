@@ -49,3 +49,11 @@ export async function getProjects() {
 
   return data;
 }
+
+export async function getExperiences() {
+  const data = await client.fetch(groq`*[_type=="experience"]{
+    ...
+  }`);
+
+  return data;
+}
