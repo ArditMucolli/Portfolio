@@ -12,7 +12,7 @@ type Props = {
 const Navbar = ({ socialsData }: Props) => {
   const pathname = usePathname();
   return (
-    <nav className="sticky top-0 first-letter:max-w-7xl mx-auto p-5 flex items-center justify-between z-20">
+    <nav className="sticky top-0 bg-white first-letter:max-w-7xl mx-auto p-5 flex items-center justify-between z-20">
       <Motion delay={1} direction="left">
         <div className="flex items-center space-x-6">
           {socialsData?.map((social: Socials, index: number) => (

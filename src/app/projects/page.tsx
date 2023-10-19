@@ -19,7 +19,7 @@ const ProjectsPage = async (props: Props) => {
           ))}
         </div>
       </div>
-      <Footer />
+      <Footer social={socialData} />
     </section>
   );
 };

@@ -7,7 +7,6 @@ type Props = {};
 
 const Projects = async (props: Props) => {
   const projectData: Projects[] = await getProjects();
-  console.log(projectData[0], "heyyyy");
   return (
     <section className="h-max mt-10 md:h-screen max-w-7xl mx-auto flex flex-col justify-center items-center space-y-24">
       <h1 className="text-2xl uppercase tracking-[20px] text-violet-500">

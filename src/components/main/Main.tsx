@@ -11,7 +11,6 @@ type Props = {};
 
 const Main = async (props: Props) => {
   const profileData: Profile = await getProfile();
-  console.log(profileData);
   return (
     <section className="h-[calc(100vh-56px)] w-full flex justify-center items-center">
       <div className="flex flex-col items-center justyify-center space-y-4">

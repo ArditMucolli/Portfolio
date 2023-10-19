@@ -26,24 +26,29 @@ const ProjectPage = async ({ params }: Props) => {
               {projectData._createdAt.toString().slice(0, 10)}
             </p>
           </div>
-          <button className="text-[#F1F6F9] md:font-bold bg-violet-500 px-2 md:px-4 py-2 rounded-lg hover:bg-violet-300 text-sm">
-            {projectData.demo ? (
-              <Link href={projectData.demo}>Demo</Link>
-            ) : null}
-          </button>
-          <button className="text-[#F1F6F9] md:font-bold bg-violet-500 px-2 md:px-4 py-2 rounded-lg hover:bg-violet-300 text-sm">
-            {projectData.code ? (
-              <Link href={projectData.code}>Code</Link>
-            ) : null}
-          </button>
+          <div className="ml-auto flex mb-5 space-x-4">
+            <button className="text-[#F1F6F9] md:font-bold bg-violet-500 px-2 md:px-4 py-2 rounded-lg hover:bg-violet-300 text-sm">
+              <Link href={projectData.demo || "/"} target="_blank">
+                Demo
+              </Link>
+            </button>
+            <button className="text-[#F1F6F9] md:font-bold bg-violet-500 px-2 md:px-4 py-2 rounded-lg hover-bg-violet-300 text-sm">
+              <Link href={projectData.demo || "/"} target="_blank">
+                Code
+              </Link>
+            </button>
+          </div>
         </div>
-        <Image
-          src={projectData.image}
-          alt={projectData.title}
-          className="w-full object-cover border-2 border-violet-500"
-          width={500}
-          height={500}
-        />
+        <div className="w-full md:max-w-200 flex items-center justify-center">
+          <Image
+            src={projectData.image}
+            alt={projectData.title}
+            className="w-full object-cover border-2 border-violet-500"
+            width={500}
+            height={500}
+            style={{ maxWidth: "800px", textAlign: "center" }}
+          />
+        </div>
         <p>{projectData.description}</p>
         <div className="flex items-center space-x-4 text-violet-500">
           <h3>Tech used:</h3>
@@ -56,7 +61,7 @@ const ProjectPage = async ({ params }: Props) => {
           </div>
         </div>
       </div>
-      <Footer />
+      <Footer social={socialData} />
     </section>
   );
 };
