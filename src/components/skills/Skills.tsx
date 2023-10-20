@@ -6,7 +6,7 @@ const Skills = async () => {
   const skillsData: Skills[] = await getSkills();
 
   return (
-    <section className="h-screen p-5 max-w-7xl mx-auto flex flex-col justify-center items-center space-y-24">
+    <section className="h-max mt-28 md:h-screen p-5 max-w-7xl mx-auto flex flex-col justify-center items-center space-y-24">
       <h1 className="text-2xl uppercase tracking-[20px] text-violet-500">
         skills
       </h1>
