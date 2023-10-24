@@ -27,16 +27,20 @@ const ProjectPage = async ({ params }: P) => {
             </p>
           </div>
           <div className="ml-auto flex mb-5 space-x-4">
-            <button className="text-[#F1F6F9] md:font-bold bg-violet-500 px-2 md:px-4 py-2 rounded-lg hover:bg-violet-300 text-sm">
-              <Link href={projectData.demo || "/"} target="_blank">
-                Demo
-              </Link>
-            </button>
-            <button className="text-[#F1F6F9] md:font-bold bg-violet-500 px-2 md:px-4 py-2 rounded-lg hover-bg-violet-300 text-sm">
-              <Link href={projectData.demo || "/"} target="_blank">
-                Code
-              </Link>
-            </button>
+            {projectData.demo ? (
+              <button className="text-[#F1F6F9] md:font-bold bg-violet-500 px-2 md:px-4 py-2 rounded-lg hover:bg-violet-300 text-sm">
+                <Link href={projectData.demo} target="_blank">
+                  Demo
+                </Link>
+              </button>
+            ) : null}
+            {projectData.code ? (
+              <button className="text-[#F1F6F9] md:font-bold bg-violet-500 px-2 md:px-4 py-2 rounded-lg hover:bg-violet-300 text-sm">
+                <Link href={projectData.code} target="_blank">
+                  Code
+                </Link>
+              </button>
+            ) : null}
           </div>
         </div>
         <div className="w-full md:max-w-200 flex items-center justify-center">
