@@ -23,7 +23,7 @@ const Certifications = async () => {
   return (
     <section className="h-max mt-10 md:h-screen max-w-7xl mx-auto flex flex-col justify-center items-center space-y-24">
       <h1 className="text-2xl uppercase tracking-[20px] text-violet-500">
-        Certifications
+        Experience
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-5 m-5">
         {sortedExperienceData.map((experience, index) => (
