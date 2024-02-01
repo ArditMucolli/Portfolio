@@ -5,7 +5,7 @@ import Main from "../components/main/Main";
 import Navbar from "../components/navbar/Navbar";
 import Projects from "../components/projects/Projects";
 import { getSocials } from "@/utils/sanity-utis";
-import Experience from "@/components/experience/Experience";
+import Certifications from "@/components/certifications/Certifications";
 
 export default async function Home() {
   const socialsData = await getSocials();
@@ -14,7 +14,7 @@ export default async function Home() {
     <div className="h-screen w-full overflow-x-hidden bg-[#F1F6F9]">
       <Navbar socialsData={socialsData} />
       <Main />
-      <Experience />
+      <Certifications />
       <Skills />
       <Projects />
       <Contact />
