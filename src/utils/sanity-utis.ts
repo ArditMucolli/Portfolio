@@ -51,7 +51,7 @@ export async function getProjects() {
 }
 
 export async function getExperiences() {
-  const data = await client.fetch(groq`*[_type=="certification"]{
+  const data = await client.fetch(groq`*[_type=="experience"]{
     ...
   }`);
 
