@@ -39,6 +39,21 @@ const Experience = async () => {
             <p className="text-gray-800 mt-4 leading-6">
               {experience.description}
             </p>
+            {experience.tasks && experience.tasks.length > 0 && (
+              <div className="mt-6">
+                <h3 className="text-lg font-semibold mb-2 text-indigo-700">
+                  Tasks
+                </h3>
+                {experience.tasks.map((task, taskIndex) => (
+                  <div key={taskIndex} className="mt-2">
+                    <h4 className="text-base font-semibold text-indigo-600">
+                      {task.title}
+                    </h4>
+                    <p className="text-sm text-gray-800">{task.description}</p>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         ))}
       </div>

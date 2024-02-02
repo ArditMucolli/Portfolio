@@ -1,3 +1,5 @@
+// experience.js
+
 import { defineType, defineField } from "sanity";
 
 export default defineType({
@@ -29,6 +31,21 @@ export default defineType({
       name: "description",
       title: "Description",
       type: "text",
+    }),
+    defineField({
+      name: "tasks",
+      title: "Tasks",
+      type: "array",
+      of: [
+        {
+          type: "object",
+          fields: [
+            { name: "title", title: "Task Title", type: "string" },
+            { name: "description", title: "Task Description", type: "text" },
+          ],
+        },
+      ],
+      description: "List of tasks performed during the professional journey",
     }),
   ],
 });

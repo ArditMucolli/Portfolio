@@ -1,3 +1,8 @@
+export type TaskType = {
+  title: string;
+  description: string;
+};
+
 export type ExperienceType = {
   _id: string;
   title: string;
@@ -5,4 +10,5 @@ export type ExperienceType = {
   startDate: string;
   endDate: string;
   description: string;
+  tasks?: TaskType[];
 };
