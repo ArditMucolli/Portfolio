@@ -19,7 +19,7 @@ const Contact = () => {
 
   return (
     <section className="h-screen p-5 max-w-7xl mx-auto flex flex-col justify-center items-center space-y-24 w-full">
-      <h1 className="text-2xl uppercase tracking-[20px] text-violet-500">
+      <h1 className="text-3xl uppercase tracking-[20px] text-violet-700 font-extrabold">
         contact me
       </h1>
       <form

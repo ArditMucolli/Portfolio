@@ -57,3 +57,11 @@ export async function getExperiences() {
 
   return data;
 }
+
+export async function getCertifications() {
+  const data = await client.fetch(groq`*[_type=="certifications"]{
+    ...
+  }`);
+
+  return data;
+}
