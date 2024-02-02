@@ -25,9 +25,9 @@ const Certifications = async () => {
       <h1 className="text-xl lg:text-3xl uppercase tracking-[10px] text-violet-700 font-extrabold">
         Certifications
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-5 m-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-5 m-5 ">
         {sortedCertificationData.map((certification, index) => (
-          <div key={index} className="border p-4 rounded-md shadow-md ">
+          <div key={index} className="border p-4 rounded-md shadow-md bg-white">
             <h2 className="text-lg font-semibold mb-2">
               {certification.title}
             </h2>
