@@ -7,7 +7,7 @@ const Projects = async () => {
   const projectData: Projects[] = await getProjects();
   return (
     <section className="h-max mt-28 md:h-screen max-w-7xl mx-auto flex flex-col justify-center items-center space-y-24">
-      <h1 className="text-3xl uppercase tracking-[20px] text-violet-700 font-extrabold">
+      <h1 className="text-xl lg:text-3xl uppercase tracking-[10px] text-violet-700 font-extrabold">
         projects
       </h1>
       <div className=" grid grid-cols-1 md:grid-cols-3 gap-8">

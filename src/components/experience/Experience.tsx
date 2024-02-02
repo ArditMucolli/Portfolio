@@ -21,8 +21,8 @@ const Experience = async () => {
   }
 
   return (
-    <section className="h-screen mt-10 max-w-7xl mx-auto flex flex-col justify-center items-center space-y-12">
-      <h1 className="text-3xl uppercase tracking-[20px] text-violet-700 font-extrabold">
+    <section className="h-max mt-10 max-w-7xl mx-auto flex flex-col justify-center items-center space-y-12">
+      <h1 className="text-xl text-center lg:text-3xl uppercase tracking-[10px] text-violet-700 font-extrabold">
         Professional Journey
       </h1>
       <div className="grid grid-cols-1 gap-8 p-6 m-6">
