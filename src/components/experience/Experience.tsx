@@ -42,7 +42,7 @@ const Experience = async () => {
             {experience.tasks && experience.tasks.length > 0 && (
               <div className="mt-6">
                 <h3 className="text-lg font-semibold mb-2 text-indigo-700">
-                  Tasks
+                  Responsibilities Spotlight
                 </h3>
                 {experience.tasks.map((task, taskIndex) => (
                   <div key={taskIndex} className="mt-2">
