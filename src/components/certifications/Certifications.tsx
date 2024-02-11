@@ -1,8 +1,8 @@
-import { ExperienceType } from "@/app/types/ExperienceType";
+import { CertificationsType } from "@/app/types/CertificationsType";
 import { getCertifications } from "@/utils/sanity-utis";
 
 const Certifications = async () => {
-  const certificationsData: ExperienceType[] = await getCertifications();
+  const certificationsData: CertificationsType[] = await getCertifications();
 
   const sortedCertificationData = certificationsData.sort((a, b) => {
     const startDateA = new Date(a.startDate);
@@ -37,6 +37,16 @@ const Certifications = async () => {
               {formatDate(certification.endDate)}
             </p>
             <p className="text-gray-800 mt-2">{certification.description}</p>
+            {certification.certificateLink && (
+              <a
+                href={certification.certificateLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-6 cursor-pointer inline-block bg-violet-700 hover:bg-violet-600 text-white font-bold py-2 px-4 rounded"
+              >
+                View Certificate
+              </a>
+            )}
           </div>
         ))}
       </div>

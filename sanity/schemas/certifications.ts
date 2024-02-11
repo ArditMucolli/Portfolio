@@ -30,5 +30,11 @@ export default defineType({
       title: "Description",
       type: "text",
     }),
+    defineField({
+      name: "certificateLink",
+      title: "Certificate Link",
+      type: "url",
+      description: "Link to view the certificate",
+    }),
   ],
 });

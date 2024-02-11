@@ -5,4 +5,5 @@ export type CertificationsType = {
   startDate: string;
   endDate: string;
   description: string;
+  certificateLink: string;
 };
