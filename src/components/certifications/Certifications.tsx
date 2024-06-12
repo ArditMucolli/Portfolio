@@ -25,27 +25,34 @@ const Certifications = async () => {
       <h1 className="text-xl lg:text-3xl uppercase tracking-[10px] text-violet-700 font-extrabold">
         Certifications
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-5 m-5 ">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-5 m-5">
         {sortedCertificationData.map((certification, index) => (
-          <div key={index} className="border p-4 rounded-md shadow-md bg-white">
-            <h2 className="text-lg font-semibold mb-2">
-              {certification.title}
-            </h2>
-            <p className="text-gray-600 ">{certification.company}</p>
-            <p className="text-gray-600">
-              From: {formatDate(certification.startDate)} -{" "}
-              {formatDate(certification.endDate)}
-            </p>
-            <p className="text-gray-800 mt-2">{certification.description}</p>
+          <div
+            key={index}
+            className="border p-4 rounded-md shadow-md bg-white flex flex-col"
+          >
+            <div>
+              <h2 className="text-lg font-semibold mb-2">
+                {certification.title}
+              </h2>
+              <p className="text-gray-600">{certification.company}</p>
+              <p className="text-gray-600">
+                From: {formatDate(certification.startDate)} -{" "}
+                {formatDate(certification.endDate)}
+              </p>
+              <p className="text-gray-800 mt-2">{certification.description}</p>
+            </div>
             {certification.certificateLink && (
-              <a
-                href={certification.certificateLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-6 cursor-pointer inline-block bg-violet-700 hover:bg-violet-600 text-white font-bold py-2 px-4 rounded"
-              >
-                View Certificate
-              </a>
+              <div className="flex-grow flex items-end mt-4">
+                <a
+                  href={certification.certificateLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-violet-700 hover:bg-violet-600 text-white font-bold py-2 px-4 rounded w-full text-center"
+                >
+                  View Certificate
+                </a>
+              </div>
             )}
           </div>
         ))}
