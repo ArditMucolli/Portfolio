@@ -1,19 +1,56 @@
-import Footer from "@/components/footer/Footer";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import Navbar from "@/components/navbar/Navbar";
-import Link from "next/link";
+import Footer from "@/components/footer/Footer";
 import Image from "next/image";
 import { getProject, getSocials } from "@/utils/sanity-utis";
-import { Projects } from "@/app/types/ProjectsType";
+import { ProjectType } from "@/app/types/ProjectsType";
 import { Skills } from "@/app/types/SkillType";
 
 type P = {
   params: { _id: string };
 };
 
-const ProjectPage = async ({ params }: P) => {
-  const _id = params._id;
-  const socialData = await getSocials();
-  const projectData: Projects = await getProject(_id);
+const ProjectPage = ({ params }: P) => {
+  const { _id } = params;
+
+  const [socialData, setSocialData] = useState<any>(null);
+  const [projectData, setProjectData] = useState<ProjectType | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const [socialDataResponse, projectDataResponse] = await Promise.all([
+          getSocials(),
+          getProject(_id),
+        ]);
+        setSocialData(socialDataResponse);
+        setProjectData(projectDataResponse);
+      } catch (error) {
+        setError("Error fetching data: " + error);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    fetchData();
+  }, [_id]);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
+  if (!socialData || !projectData) {
+    return <div>Data not available</div>;
+  }
+
   return (
     <section className="w-full bg-[#F1F6F9]">
       <Navbar socialsData={socialData} />
@@ -27,20 +64,28 @@ const ProjectPage = async ({ params }: P) => {
             </p>
           </div>
           <div className="ml-auto flex mb-5 space-x-4">
-            {projectData.demo ? (
+            {projectData.demo && (
               <button className="text-[#F1F6F9] md:font-bold bg-violet-500 px-2 md:px-4 py-2 rounded-lg hover:bg-violet-300 text-sm">
-                <Link href={projectData.demo} target="_blank">
+                <a
+                  href={projectData.demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Demo
-                </Link>
+                </a>
               </button>
-            ) : null}
-            {projectData.code ? (
+            )}
+            {projectData.code && (
               <button className="text-[#F1F6F9] md:font-bold bg-violet-500 px-2 md:px-4 py-2 rounded-lg hover:bg-violet-300 text-sm">
-                <Link href={projectData.code} target="_blank">
+                <a
+                  href={projectData.code}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Code
-                </Link>
+                </a>
               </button>
-            ) : null}
+            )}
           </div>
         </div>
         <div className="w-full md:max-w-200 flex items-center justify-center">

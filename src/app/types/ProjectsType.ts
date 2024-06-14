@@ -1,6 +1,6 @@
 import { Skills } from "./SkillType";
 
-export type Projects = {
+export type ProjectType = {
   slice(arg0: number, arg1: number): unknown;
   _id: string;
   title: string;

@@ -1,8 +1,16 @@
-import { CertificationsType } from "@/app/types/CertificationsType";
-import { getCertifications } from "@/utils/sanity-utis";
+"use client";
 
-const Certifications = async () => {
-  const certificationsData: CertificationsType[] = await getCertifications();
+import { useData } from "@/context/DataContext";
+import { CertificationsType } from "@/app/types/CertificationsType";
+
+const Certifications = () => {
+  const { certifications, loading } = useData();
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+
+  const certificationsData: CertificationsType[] = certifications || [];
 
   const sortedCertificationData = certificationsData.sort((a, b) => {
     const startDateA = new Date(a.startDate);

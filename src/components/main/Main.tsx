@@ -1,17 +1,30 @@
+"use client";
+
 import Image from "next/image";
 import TypeWriter from "./TypeWriter";
 import CursorComponent from "./CursorComponent";
 import { SocialIcon } from "react-social-icons";
 import Motion from "../motion/Motion";
-import { getProfile } from "@/utils/sanity-utis";
+import { useData } from "@/context/DataContext";
 import { Profile } from "@/app/types/ProfileType";
 import { Socials } from "@/app/types/SocialType";
 
-const Main = async () => {
-  const profileData: Profile = await getProfile();
+const Main = () => {
+  const { profile, loading } = useData();
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+
+  const profileData: Profile | null = profile;
+
+  if (!profileData) {
+    return <p>No profile data available</p>;
+  }
+
   return (
     <section className="h-[calc(100vh-56px)] w-full flex justify-center items-center">
-      <div className="flex flex-col items-center justyify-center space-y-4">
+      <div className="flex flex-col items-center justify-center space-y-4">
         <Motion delay={1} direction="down">
           <Image
             src={profileData.image}
@@ -22,7 +35,9 @@ const Main = async () => {
           />
         </Motion>
         <Motion delay={1} direction="">
-          <p className="font-bold mx-auto w-1/2">{profileData.smallBio}</p>
+          <p className="font-bold mx-auto w-1/2 text-center">
+            {profileData.smallBio}
+          </p>
         </Motion>
         <Motion delay={1} direction="">
           <div className="flex justify-center space-x-2 items-center">

@@ -1,10 +1,18 @@
+"use client";
+
+import { useData } from "@/context/DataContext";
 import { ExperienceType } from "@/app/types/ExperienceType";
-import { getExperiences } from "@/utils/sanity-utis";
 
-const Experience = async () => {
-  const experienceData: ExperienceType[] = await getExperiences();
+const Experience = () => {
+  const { experiences, loading } = useData();
 
-  const sortedExperienceData = experienceData.sort((a, b) => {
+  const typedExperiences: ExperienceType[] | null = experiences;
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+
+  const sortedExperienceData = (typedExperiences || []).sort((a, b) => {
     const startDateA = new Date(a.startDate);
     const startDateB = new Date(b.startDate);
     return Number(startDateB) - Number(startDateA);
@@ -34,7 +42,7 @@ const Experience = async () => {
             <p className="text-gray-600 font-semibold">{experience.company}</p>
             <p className="text-gray-600">
               {formatDate(experience.startDate)} -{" "}
-              {formatDate(experience.endDate)}
+              {experience.endDate ? formatDate(experience.endDate) : "Present"}
             </p>
             <p className="text-gray-800 mt-4 leading-6">
               {experience.description}

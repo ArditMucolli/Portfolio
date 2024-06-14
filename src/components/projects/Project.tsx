@@ -1,9 +1,9 @@
-import { Projects } from "@/app/types/ProjectsType";
+import { ProjectType } from "@/app/types/ProjectsType";
 import Image from "next/image";
 import Link from "next/link";
 
 type P = {
-  projects: Projects;
+  projects: ProjectType;
 };
 
 const Project = ({ projects }: P) => {
