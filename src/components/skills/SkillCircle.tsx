@@ -1,8 +1,8 @@
-import { Skills } from "@/app/types/SkillType";
+import { SkillsType } from "@/app/types/SkillType";
 import Image from "next/image";
 
 type P = {
-  skills: Skills;
+  skills: SkillsType;
 };
 
 const SkillCircle = ({ skills }: P) => {

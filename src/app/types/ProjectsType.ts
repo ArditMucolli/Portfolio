@@ -1,4 +1,4 @@
-import { Skills } from "./SkillType";
+import { SkillsType } from "./SkillType";
 
 export type ProjectType = {
   slice(arg0: number, arg1: number): unknown;
@@ -9,5 +9,5 @@ export type ProjectType = {
   _createdAt: string;
   code: string;
   demo: string;
-  tech: Skills[];
+  tech: SkillsType[];
 };

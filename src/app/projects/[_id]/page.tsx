@@ -6,7 +6,7 @@ import Footer from "@/components/footer/Footer";
 import Image from "next/image";
 import { getProject, getSocials } from "@/utils/sanity-utis";
 import { ProjectType } from "@/app/types/ProjectsType";
-import { Skills } from "@/app/types/SkillType";
+import { SkillsType } from "@/app/types/SkillType";
 import Motion from "@/components/motion/Motion";
 import { RingLoader } from "react-spinners";
 
@@ -113,7 +113,7 @@ const ProjectPage = ({ params }: P) => {
           <div className="flex items-center space-x-4 text-violet-500">
             <h3>Tech used:</h3>
             <div className="flex items-center space-x-2 text-sm font-bold">
-              {projectData.tech.map((tech: Skills, index: number) => (
+              {projectData.tech.map((tech: SkillsType, index: number) => (
                 <p key={index} className="bg-violet-200 rounded-lg p-1">
                   {tech.title}
                 </p>

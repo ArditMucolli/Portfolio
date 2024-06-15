@@ -19,14 +19,14 @@ import {
 import { Profile } from "@/app/types/ProfileType";
 import { ProjectType } from "@/app/types/ProjectsType";
 import { ExperienceType } from "@/app/types/ExperienceType";
-import { Skills } from "@/app/types/SkillType";
+import { SkillsType } from "@/app/types/SkillType";
 import { CertificationsType } from "@/app/types/CertificationsType";
 import { Socials } from "@/app/types/SocialType";
 
 interface DataType {
   projects: ProjectType[] | null;
   profile: Profile | null;
-  skills: Skills[] | null;
+  skills: SkillsType[] | null;
   experiences: ExperienceType[] | null;
   certifications: CertificationsType[] | null;
   socials: Socials[] | null;
