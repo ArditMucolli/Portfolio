@@ -7,12 +7,25 @@ import Footer from "@/components/footer/Footer";
 import { useData } from "@/context/DataContext";
 import { ProjectType } from "../types/ProjectsType";
 import Motion from "@/components/motion/Motion";
+import { RingLoader } from "react-spinners";
 
 const ProjectsPage = () => {
   const { projects, socials } = useData();
 
   if (!projects || !socials) {
-    return <div>Loading...</div>;
+    return (
+      <>
+        <Navbar socialsData={socials} />
+        <div className="flex justify-center items-center h-screen">
+          <RingLoader
+            color="#4F46E5"
+            loading={!projects || !socials}
+            size={80}
+          />{" "}
+        </div>
+        <Footer social={socials} />
+      </>
+    );
   }
 
   return (

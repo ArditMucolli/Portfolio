@@ -2,6 +2,7 @@
 
 import { useData } from "@/context/DataContext";
 import { ExperienceType } from "@/app/types/ExperienceType";
+import { RingLoader } from "react-spinners";
 
 const Experience = () => {
   const { experiences, loading } = useData();
@@ -9,7 +10,13 @@ const Experience = () => {
   const typedExperiences: ExperienceType[] | null = experiences;
 
   if (loading) {
-    return <p>Loading...</p>;
+    return (
+      <>
+        <div className="flex justify-center items-center h-screen">
+          <RingLoader color="#4F46E5" loading={loading} size={80} />{" "}
+        </div>
+      </>
+    );
   }
 
   const sortedExperienceData = (typedExperiences || []).sort((a, b) => {

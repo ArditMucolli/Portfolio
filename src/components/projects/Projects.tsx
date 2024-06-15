@@ -4,12 +4,19 @@ import Link from "next/link";
 import Project from "./Project";
 import { ProjectType } from "@/app/types/ProjectsType";
 import { useData } from "@/context/DataContext";
+import { RingLoader } from "react-spinners";
 
 const Projects = () => {
   const { projects, loading } = useData();
 
   if (loading) {
-    return <p className="text-center">Loading...</p>;
+    return (
+      <>
+        <div className="flex justify-center items-center h-screen">
+          <RingLoader color="#4F46E5" loading={loading} size={80} />{" "}
+        </div>
+      </>
+    );
   }
 
   if (!projects) {

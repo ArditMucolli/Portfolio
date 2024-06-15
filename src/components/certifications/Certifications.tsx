@@ -2,12 +2,19 @@
 
 import { useData } from "@/context/DataContext";
 import { CertificationsType } from "@/app/types/CertificationsType";
+import { RingLoader } from "react-spinners";
 
 const Certifications = () => {
   const { certifications, loading } = useData();
 
   if (loading) {
-    return <p>Loading...</p>;
+    return (
+      <>
+        <div className="flex justify-center items-center h-screen">
+          <RingLoader color="#4F46E5" loading={loading} size={80} />{" "}
+        </div>
+      </>
+    );
   }
 
   const certificationsData: CertificationsType[] = certifications || [];

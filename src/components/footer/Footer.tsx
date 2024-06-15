@@ -2,7 +2,7 @@ import { Socials } from "@/app/types/SocialType";
 import { SocialIcon } from "react-social-icons";
 
 type P = {
-  social: Socials[];
+  social: Socials[] | null;
 };
 
 const Footer = ({ social }: P) => {

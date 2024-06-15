@@ -6,7 +6,7 @@ import Motion from "../motion/Motion";
 import { Socials } from "@/app/types/SocialType";
 
 type P = {
-  socialsData: Socials[];
+  socialsData: Socials[] | null;
 };
 
 const Navbar = ({ socialsData }: P) => {

@@ -8,6 +8,7 @@ import { getProject, getSocials } from "@/utils/sanity-utis";
 import { ProjectType } from "@/app/types/ProjectsType";
 import { Skills } from "@/app/types/SkillType";
 import Motion from "@/components/motion/Motion";
+import { RingLoader } from "react-spinners";
 
 type P = {
   params: { _id: string };
@@ -41,7 +42,15 @@ const ProjectPage = ({ params }: P) => {
   }, [_id]);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <>
+        <Navbar socialsData={socialData} />
+        <div className="flex justify-center items-center h-screen">
+          <RingLoader color="#4F46E5" loading={loading} size={80} />{" "}
+        </div>
+        <Footer social={socialData} />
+      </>
+    );
   }
 
   if (error) {
