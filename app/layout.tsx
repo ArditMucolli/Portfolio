@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Ardit Mucolli App",
+  title: "Ardit Mucolli",
   description: "This is a portfolio website",
 };
 
