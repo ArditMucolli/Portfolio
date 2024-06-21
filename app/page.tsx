@@ -1,5 +1,6 @@
 import Footer from "@/components/footer/Footer";
 import Navbar from "@/components/navbar/Navbar";
+import Projects from "@/components/projects/Projects";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       {/*<Main />
       <Experience />
        */}
+      <Projects />
       <Footer />
     </div>
   );

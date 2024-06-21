@@ -16,6 +16,7 @@
     "react": "^18",
     "react-dom": "^18",
     "react-social-icons": "^6.16.0",
+    "react-spinners": "^0.13.8",
     "sanity": "^3.46.1",
     "styled-components": "^6.1.11"
   },
