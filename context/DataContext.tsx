@@ -31,13 +31,35 @@ interface DataType {
   certifications: CertificateType[] | null;
   socials: SocialType[] | null;
   loading: boolean;
+  error?: string;
 }
 
-const DataContext = createContext<DataType | undefined>(undefined);
+const defaultData: DataType = {
+  projects: null,
+  profile: null,
+  skills: null,
+  experiences: null,
+  certifications: null,
+  socials: null,
+  loading: true,
+  error: undefined,
+};
+
+const DataContext = createContext<DataType | undefined>(defaultData);
 
 interface DataProviderProps {
   children: ReactNode;
 }
+
+const getErrorMessage = (error: unknown): string => {
+  if (error instanceof Error) {
+    return error.message;
+  }
+  if (typeof error === "string") {
+    return error;
+  }
+  return "An unknown error occurred";
+};
 
 export const DataProvider: FC<DataProviderProps> = ({ children }) => {
   const [data, setData] = useState<DataType>({
@@ -78,8 +100,13 @@ export const DataProvider: FC<DataProviderProps> = ({ children }) => {
           loading: false,
         });
       } catch (error) {
-        console.error("Error fetching data:", error);
-        setData((prevData) => ({ ...prevData, loading: false }));
+        const errorMessage = getErrorMessage(error);
+        console.error("Error fetching data:", errorMessage, error);
+        setData((prevData) => ({
+          ...prevData,
+          loading: false,
+          error: errorMessage,
+        }));
       }
     }
 
