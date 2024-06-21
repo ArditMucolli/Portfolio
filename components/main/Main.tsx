@@ -3,9 +3,12 @@
 import Image from "next/image";
 import { useData } from "@/context/DataContext";
 import { RingLoader } from "react-spinners";
+import { SocialType } from "@/types/SocialType";
+import { SocialIcon } from "react-social-icons";
 
 const Main = () => {
   const { profile, loading } = useData();
+  const socialsData: SocialType[] = useData()?.socials || [];
 
   if (loading) {
     return (
@@ -51,6 +54,19 @@ const Main = () => {
           )}
         </div>
         <p className="text-center text-gray-700 mt-4">{bio}</p>
+        <div className="mt-7 flex justify-center items-center space-x-2 md:space-x-3">
+          {socialsData.map((social: SocialType, index: number) => (
+            <SocialIcon
+              key={index}
+              style={{ height: 30, width: 30 }}
+              fgColor="#ffffff"
+              className="hover:scale-125 duration-200"
+              target="_blank"
+              rel="noopener noreferrer"
+              url={social.url}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );
