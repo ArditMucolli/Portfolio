@@ -19,7 +19,7 @@ const Project = ({ projects }: P) => {
         width={200}
         height={150}
       />
-      <div className="bg-violet-500 absolute top-0 left-0 h-full w-full flex justify-center items-center text-white p-4 text-xs text-center rounded-lg opacity-0 group-hover:opacity-100 transition-all ease-in duration-300 truncate">
+      <div className="bg-transparent absolute top-0 left-0 h-full w-full flex justify-center items-center text-white p-4 text-xs text-center rounded-lg opacity-0 group-hover:opacity-100 transition-all ease-in duration-300 truncate">
         <div className="truncate">{projects?.description}</div>
       </div>
     </Link>
