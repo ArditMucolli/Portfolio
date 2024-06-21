@@ -3,7 +3,7 @@ import profile from "./schemas/profile";
 import work from "./schemas/work";
 import skills from "./schemas/skills";
 import social from "./schemas/social";
-import certifications from "./schemas/certifications";
+import certifications from "./schemas/certificates";
 import projects from "./schemas/projects";
 
 export const schema: { types: SchemaTypeDefinition[] } = {

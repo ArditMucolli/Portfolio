@@ -1,9 +1,8 @@
 export type TaskType = {
-  title: string;
   description: string;
 };
 
-export type ExperienceType = {
+export type WorkType = {
   _id: string;
   title: string;
   company: string;

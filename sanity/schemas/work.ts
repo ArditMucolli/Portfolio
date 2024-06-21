@@ -1,7 +1,7 @@
 import { defineType, defineField } from "sanity";
 
 export default defineType({
-  name: "experience",
+  name: "work",
   title: "Experience",
   type: "document",
   fields: [
@@ -38,7 +38,6 @@ export default defineType({
         {
           type: "object",
           fields: [
-            { name: "title", title: "Task Title", type: "string" },
             { name: "description", title: "Task Description", type: "text" },
           ],
         },

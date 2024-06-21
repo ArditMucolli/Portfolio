@@ -15,6 +15,7 @@
     "next-sanity": "^9.3.10",
     "react": "^18",
     "react-dom": "^18",
+    "react-social-icons": "^6.16.0",
     "sanity": "^3.46.1",
     "styled-components": "^6.1.11"
   },
