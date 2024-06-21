@@ -24,7 +24,7 @@ const Projects = () => {
   }
 
   return (
-    <section className="h-max mt-28 md:h-screen max-w-7xl mx-auto flex flex-col justify-center items-center space-y-24">
+    <section className="h-max max-w-3xl w-full p-8 mt-28 md:h-screen mx-auto flex flex-col justify-center items-center space-y-24">
       <h1 className="text-xl lg:text-3xl uppercase tracking-[10px] text-black font-extrabold">
         Projects
       </h1>
