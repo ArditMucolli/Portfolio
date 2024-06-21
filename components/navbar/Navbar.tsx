@@ -19,7 +19,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="fixed z-10 top-0 w-full bg-transparent">
+      <nav className="fixed z-10 top-0 w-full bg-white">
         <div className="max-w-7xl mx-auto p-5 flex items-center justify-center relative">
           {/* Navbar links hidden on mobile */}
           <div className="hidden lg:flex items-center font-bold space-x-4 gap-5 md:space-x-8">

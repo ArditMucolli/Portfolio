@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
+import { DataProvider } from "@/context/DataContext";
 
 export const metadata: Metadata = {
   title: "Ardit Mucolli",
@@ -14,7 +14,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <DataProvider>{children}</DataProvider>
+      </body>
     </html>
   );
 }
