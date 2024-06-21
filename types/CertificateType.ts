@@ -1,4 +1,4 @@
-export type CertificationsType = {
+export type CertificateType = {
   _id: string;
   title: string;
   company: string;
