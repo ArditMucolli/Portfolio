@@ -42,7 +42,7 @@ const Navbar = () => {
             <a
               href="/work"
               className={`${
-                isActive("/projects") ? "font-bold" : "font-normal"
+                isActive("/work") ? "font-bold" : "font-normal"
               } text-black hover:text-gray-600 transition-all duration-300 ease-in-out uppercase tracking-wide md:tracking-widest text-sm md:text-base`}
             >
               Work
@@ -137,6 +137,14 @@ const Navbar = () => {
                 onClick={toggleMenu}
               >
                 About
+              </a>
+              <a
+                href="/work"
+                className={`${
+                  isActive("/work") ? "font-bold" : "font-normal"
+                } text-black hover:text-gray-600 transition-all duration-300 ease-in-out uppercase tracking-wide md:tracking-widest text-sm md:text-base`}
+              >
+                Work
               </a>
               <a
                 href="/projects"
