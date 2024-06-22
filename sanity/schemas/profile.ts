@@ -29,6 +29,11 @@ export default defineType({
       type: "string",
     }),
     defineField({
+      name: "smallBio",
+      title: "Small Bio",
+      type: "text",
+    }),
+    defineField({
       name: "bio",
       title: "Bio",
       type: "text",

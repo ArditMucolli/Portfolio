@@ -33,7 +33,7 @@ const Projects = () => {
           <Project key={index} projects={project} />
         ))}
       </div>
-      <p className="text-center text-xs text-violet-500 cursor-pointer">
+      <p className="text-center text-xs text-black cursor-pointer">
         <Link href="/projects">See more..</Link>
       </p>
     </section>

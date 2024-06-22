@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { DataProvider } from "@/context/DataContext";
+import Navbar from "@/components/navbar/Navbar";
+import Footer from "@/components/footer/Footer";
 
 export const metadata: Metadata = {
   title: "Ardit Mucolli",
@@ -15,7 +17,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <DataProvider>{children}</DataProvider>
+        <DataProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </DataProvider>
       </body>
     </html>
   );

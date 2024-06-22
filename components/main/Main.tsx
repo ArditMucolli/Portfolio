@@ -28,7 +28,7 @@ const Main = () => {
     );
   }
 
-  const { name, profileImage, occupation, location, bio } = profile;
+  const { name, profileImage, occupation, location, smallBio } = profile;
 
   return (
     <section className="min-h-screen flex flex-col items-center justify-center bg-white">
@@ -53,7 +53,7 @@ const Main = () => {
             </div>
           )}
         </div>
-        <p className="text-center text-gray-700 mt-4">{bio}</p>
+        <p className="text-center text-gray-700 mt-4">{smallBio}</p>
         <div className="mt-7 flex justify-center items-center space-x-2 md:space-x-3">
           {socialsData.map((social: SocialType, index: number) => (
             <SocialIcon

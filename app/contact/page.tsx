@@ -25,7 +25,6 @@ const ContactPage = () => {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <Navbar />
       <section className="h-screen flex flex-col justify-center items-center py-16 mt-10">
         <h1 className="text-3xl sm:text-4xl font-bold text-center mb-12">
           Contact Me
@@ -102,7 +101,6 @@ const ContactPage = () => {
           </button>
         </form>
       </section>
-      <Footer />
     </div>
   );
 };

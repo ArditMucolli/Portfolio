@@ -8,7 +8,6 @@ import Skills from "@/components/skills/Skills";
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
-      <Navbar />
       <Main />
       {/*
       <Experience />
@@ -16,7 +15,6 @@ export default function Home() {
       <Projects />
       <Certifications />
       <Skills />
-      <Footer />
     </div>
   );
 }

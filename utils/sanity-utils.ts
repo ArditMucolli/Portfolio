@@ -18,6 +18,7 @@ export async function getProfile() {
         name,
         email,
         bio,
+        smallBio,
         location,
         occupation,
         phone,
