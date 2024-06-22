@@ -47,7 +47,7 @@ export async function getSkills() {
 
 export async function getCertificates() {
   try {
-    const data = await client.fetch(groq`*[_type=="certificate"]{
+    const data = await client.fetch(groq`*[_type=="certificates"]{
               _id,
               title,
               company,
