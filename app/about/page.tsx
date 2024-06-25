@@ -6,6 +6,7 @@ import { SocialType } from "@/types/SocialType";
 import { Profile } from "@/types/ProfileType";
 import { useData } from "@/context/DataContext";
 import { RingLoader } from "react-spinners";
+import DownloadFile from "@/components/downloadFile/DownloadFile";
 
 const About = () => {
   const profileData: Profile | null = useData()?.profile;
@@ -42,6 +43,11 @@ const About = () => {
           <p className="text-lg text-left text-gray-700 mb-6">
             {profileData?.bio}
           </p>
+          <div className="mb-5 space-x-4">
+            {profileData?.cv && (
+              <DownloadFile fileUrl={profileData.cv} buttonLabel="Open my CV" />
+            )}
+          </div>
           <div className="text-lg text-gray-700 mb-6">
             <strong>Email:</strong>{" "}
             <a
