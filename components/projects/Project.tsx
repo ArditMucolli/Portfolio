@@ -10,7 +10,7 @@ const Project = ({ projects }: P) => {
   return (
     <Link
       href={"/projects/" + projects?._id}
-      className="relative h-[200px] rounded-lg group cursor-pointer shadow-lg shadow-gray-400 hover-scale-105 duration-300"
+      className="relative h-[200px] rounded-lg group cursor-pointer shadow-lg shadow-gray-400 hover:scale-105 duration-300"
     >
       <Image
         src={projects?.image}
@@ -19,8 +19,10 @@ const Project = ({ projects }: P) => {
         width={200}
         height={150}
       />
-      <div className="bg-transparent absolute top-0 left-0 h-full w-full flex justify-center items-center text-white p-4 text-xs text-center rounded-lg opacity-0 group-hover:opacity-100 transition-all ease-in duration-300 truncate">
-        <div className="truncate">{projects?.title}</div>
+      <div className="absolute w-full  bg-opacity-75 p-2 flex justify-center">
+        <div className="truncate text-center text-black font-bold">
+          {projects?.title}
+        </div>
       </div>
     </Link>
   );

@@ -28,7 +28,7 @@ const About = () => {
             <Image
               src={profileData.profileImage}
               alt="Profile"
-              className="mb-8 rounded-md object-cover"
+              className="mb-8 rounded-md"
               width={200}
               height={200}
             />

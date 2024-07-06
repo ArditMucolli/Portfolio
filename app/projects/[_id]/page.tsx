@@ -12,9 +12,7 @@ type P = {
 
 const ProjectPage = ({ params }: P) => {
   const _id = params._id;
-
   const [loading, setLoading] = useState(true);
-
   const data = useData();
 
   const projects = useMemo(() => data?.projects ?? [], [data]);
@@ -29,21 +27,17 @@ const ProjectPage = ({ params }: P) => {
 
   if (loading) {
     return (
-      <>
-        <div className="flex justify-center items-center h-screen">
-          <RingLoader color="#4F46E5" loading={loading} size={80} />{" "}
-        </div>
-      </>
+      <div className="flex justify-center items-center h-screen">
+        <RingLoader color="#4F46E5" loading={loading} size={80} />
+      </div>
     );
   }
 
   if (!projectData) {
     return (
-      <>
-        <div className="flex justify-center items-center h-screen">
-          <div>Project not found.</div>
-        </div>
-      </>
+      <div className="flex justify-center items-center h-screen">
+        <div>Project not found.</div>
+      </div>
     );
   }
 
@@ -78,14 +72,18 @@ const ProjectPage = ({ params }: P) => {
                 </a>
               </div>
             )}
-            <div className="mt-8 flex items-center space-x-4 text-black">
-              <h3>Tech used:</h3>
-              <div className="flex items-center space-x-2 text-sm font-bold">
-                {projectData.tech.map((tech: SkillsType, index: number) => (
-                  <p key={index} className="bg-blue-100 rounded-lg p-1">
-                    {tech.title}
-                  </p>
-                ))}
+            <div className="mt-8 flex flex-col items-center sm:flex-row sm:items-center space-y-4 sm:space-y-0 sm:space-x-4 text-black">
+              <h3 className="text-center sm:text-left">Tech used:</h3>
+              <div className="flex flex-wrap items-center space-x-2 text-sm font-bold">
+                {projectData.tech?.length > 0 ? (
+                  projectData.tech.map((tech: SkillsType, index: number) => (
+                    <p key={index} className="bg-blue-100 rounded-lg p-1">
+                      {tech.title}
+                    </p>
+                  ))
+                ) : (
+                  <p>No technology listed for this project.</p>
+                )}
               </div>
             </div>
           </div>

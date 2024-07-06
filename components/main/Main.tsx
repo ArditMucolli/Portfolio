@@ -41,7 +41,7 @@ const Main = () => {
             )}
             {location && <p className="text-lg text-gray-600">{location}</p>}
           </div>
-          {profileImage && (
+          {/* {profileImage && (
             <div className="relative rounded-full overflow-hidden h-32 w-32">
               <Image
                 src={profileImage}
@@ -51,7 +51,7 @@ const Main = () => {
                 className="rounded-full"
               />
             </div>
-          )}
+          )} */}
         </div>
         <p className="text-center text-gray-700 mt-4">{smallBio}</p>
         <div className="mt-7 flex justify-center items-center space-x-2 md:space-x-3">
