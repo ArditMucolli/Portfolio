@@ -20,6 +20,5 @@ const DownloadFile: React.FC<DownloadFileProps> = ({
     </a>
   );
 };
-// jjjjj
 
 export default DownloadFile;
