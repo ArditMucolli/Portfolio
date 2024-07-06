@@ -28,7 +28,7 @@ const Projects = () => {
       <h1 className="text-xl lg:text-3xl uppercase tracking-[10px] text-black font-extrabold">
         Projects
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-20">
         {projects.slice(0, 3).map((project: ProjectType, index: number) => (
           <Project key={index} projects={project} />
         ))}
