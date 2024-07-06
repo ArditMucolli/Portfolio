@@ -4,6 +4,7 @@ import { useState, useEffect, useMemo } from "react";
 import Image from "next/image";
 import { RingLoader } from "react-spinners";
 import { useData } from "@/context/DataContext";
+import { SkillsType } from "@/types/SkillType";
 
 type P = {
   params: { _id: string };
@@ -63,12 +64,6 @@ const ProjectPage = ({ params }: P) => {
             <h1 className="text-3xl sm:text-4xl font-bold text-center mb-4 mt-14">
               {projectData.title}
             </h1>
-            <div className="flex items-center space-x-2 text-sm text-black">
-              <p>Created at:</p>
-              <p className="font-bold">
-                {projectData._createdAt.toString().slice(0, 10)}
-              </p>
-            </div>
             <p className="text-lg text-gray-700 mb-8">
               {projectData.description}
             </p>
@@ -83,6 +78,16 @@ const ProjectPage = ({ params }: P) => {
                 </a>
               </div>
             )}
+            <div className="mt-8 flex items-center space-x-4 text-black">
+              <h3>Tech used:</h3>
+              <div className="flex items-center space-x-2 text-sm font-bold">
+                {projectData.tech.map((tech: SkillsType, index: number) => (
+                  <p key={index} className="bg-blue-100 rounded-lg p-1">
+                    {tech.title}
+                  </p>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
