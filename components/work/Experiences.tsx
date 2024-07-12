@@ -34,7 +34,7 @@ const Experiences = () => {
         ))}
       </div>
       <p className="text-center text-xs text-black cursor-pointer">
-        <Link href="/projects">See more..</Link>
+        <Link href="/work">See more..</Link>
       </p>
     </section>
   );
