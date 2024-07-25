@@ -77,7 +77,7 @@ const ProjectPage = ({ params }: P) => {
               <div className="flex flex-wrap items-center space-x-2 text-sm font-bold">
                 {projectData.tech?.length > 0 ? (
                   projectData.tech.map((tech: SkillsType, index: number) => (
-                    <p key={index} className="bg-blue-100 rounded-lg p-1">
+                    <p key={index} className="bg-blue-100 rounded-lg p-1 mb-4">
                       {tech.title}
                     </p>
                   ))
