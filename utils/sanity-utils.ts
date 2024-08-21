@@ -55,7 +55,8 @@ export async function getCertificates() {
               startDate,
               endDate,
               description,
-              certificateLink
+              certificateLink,
+              "certificateFile": certificateFile.asset->url,
           }`);
 
     return data;

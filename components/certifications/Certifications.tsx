@@ -55,8 +55,8 @@ const Certifications = () => {
               </p>
               <p className="text-gray-800 mt-2">{certification.description}</p>
             </div>
-            {certification.certificateLink && (
-              <div className="mt-4">
+            <div className="mt-4">
+              {certification.certificateLink ? (
                 <a
                   href={certification.certificateLink}
                   target="_blank"
@@ -65,8 +65,17 @@ const Certifications = () => {
                 >
                   View Certificate
                 </a>
-              </div>
-            )}
+              ) : certification.certificateFile ? (
+                <a
+                  href={certification.certificateFile}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className=" text-black font-bold py-2 px-4 rounded text-center inline-block transition-all duration-200 ease-in-out transform hover:scale-105 focus:scale-105"
+                >
+                  View Certificate
+                </a>
+              ) : null}
+            </div>
           </div>
         ))}
       </div>

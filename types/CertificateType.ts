@@ -6,4 +6,5 @@ export type CertificateType = {
   endDate: string;
   description: string;
   certificateLink: string;
+  certificateFile: string | null;
 };
