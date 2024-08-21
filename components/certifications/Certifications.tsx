@@ -34,7 +34,7 @@ const Certifications = () => {
   }
 
   return (
-    <section className="h-max max-w-3xl w-full p-8 mt-10 md:h-screen mx-auto flex flex-col justify-center items-center space-y-24">
+    <section className="h-max max-w-3xl w-full p-8 mt-10 mx-auto flex flex-col justify-center items-center space-y-24">
       <h1 className="text-xl lg:text-3xl uppercase tracking-[10px] text-black font-extrabold">
         Certifications
       </h1>
