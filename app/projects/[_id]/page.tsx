@@ -72,12 +72,14 @@ const ProjectPage = ({ params }: P) => {
                 </a>
               </div>
             )}
-            <div className="mt-8 flex flex-col items-center sm:flex-row sm:items-center space-y-4 sm:space-y-0 sm:space-x-4 text-black">
-              <h3 className="text-center sm:text-left">Tech used:</h3>
-              <div className="flex flex-wrap items-center space-x-2 text-sm font-bold">
+            <div className="mt-5 flex flex-wrap items-center justify-center space-x-4 text-black">
+              <h3 className="text-center sm:text-left mb-5 sm:mb-0 whitespace-nowrap">
+                Tech used:
+              </h3>
+              <div className="flex flex-wrap justify-center gap-4">
                 {projectData.tech?.length > 0 ? (
                   projectData.tech.map((tech: SkillsType, index: number) => (
-                    <p key={index} className="bg-blue-100 rounded-lg p-1 mb-4">
+                    <p key={index} className="bg-blue-100 rounded-lg p-2">
                       {tech.title}
                     </p>
                   ))
